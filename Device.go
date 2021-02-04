@@ -4,7 +4,7 @@ import (
 	"encoding/xml"
 	"errors"
 	"fmt"
-	"github.com/use-go/onvif/device"
+	"github.com/ProvisionLab/onvif/device"
 	"io/ioutil"
 	"net/http"
 	"net/url"
@@ -12,10 +12,10 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/ProvisionLab/onvif/gosoap"
+	"github.com/ProvisionLab/onvif/networking"
+	wsdiscovery "github.com/ProvisionLab/onvif/ws-discovery"
 	"github.com/beevik/etree"
-	"github.com/use-go/onvif/gosoap"
-	"github.com/use-go/onvif/networking"
-	wsdiscovery "github.com/use-go/onvif/ws-discovery"
 )
 
 //Xlmns XML Scheam

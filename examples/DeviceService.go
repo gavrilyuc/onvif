@@ -1,15 +1,16 @@
 package main
 
 import (
+	"encoding/xml"
 	"fmt"
+	"github.com/clbanning/mxj"
 	"io/ioutil"
 	"log"
 	"net/http"
 
-	goonvif "github.com/use-go/onvif"
-	"github.com/use-go/onvif/device"
-	"github.com/use-go/onvif/gosoap"
-	"github.com/use-go/onvif/xsd/onvif"
+	"github.com/ProvisionLab/onvif"
+	"github.com/ProvisionLab/onvif/device"
+	"github.com/ProvisionLab/onvif/media"
 )
 
 const (
