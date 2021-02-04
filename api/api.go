@@ -10,12 +10,12 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/ProvisionLab/onvif"
+	"github.com/ProvisionLab/onvif/gosoap"
+	"github.com/ProvisionLab/onvif/networking"
+	wsdiscovery "github.com/ProvisionLab/onvif/ws-discovery"
 	"github.com/beevik/etree"
 	"github.com/gin-gonic/gin"
-	"github.com/use-go/onvif"
-	"github.com/use-go/onvif/gosoap"
-	"github.com/use-go/onvif/networking"
-	wsdiscovery "github.com/use-go/onvif/ws-discovery"
 )
 
 func RunApi() {
@@ -161,10 +161,7 @@ func callNecessaryMethod(serviceName, methodName, acceptedData, username, passwo
 }
 
 func getEndpoint(service, xaddr string) (string, error) {
-	dev, err := onvif.NewDevice(xaddr)
-	if err != nil {
-		return "", err
-	}
+	dev := onvif.NewDevice(xaddr)
 	pkg := strings.ToLower(service)
 
 	var endpoint string
